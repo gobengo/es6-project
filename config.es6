@@ -7,14 +7,6 @@ System.config({
     "npm:*": "lib/npm/*.js"
   },
   "bundles": {
-    "build": [
-      "npm:ms@0.6.2/index",
-      "npm:ms@0.6.2",
-      "npm:debug@2.1.1/debug",
-      "npm:debug@2.1.1/browser",
-      "npm:debug@2.1.1",
-      "index"
-    ],
     "dist/jspm-play": [
       "npm:ms@0.6.2/index",
       "npm:ms@0.6.2",
