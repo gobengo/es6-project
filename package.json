@@ -1,7 +1,7 @@
 {
   "jspm": {
     "directories": {
-      "lib": ".",
+      "lib": "src",
       "packages": "lib"
     },
     "dependencies": {
@@ -10,5 +10,9 @@
   },
   "dependencies": {
     "babel": "^4.4.3"
+  },
+  "devDependencies": {
+    "babel-runtime": "^4.4.3",
+    "jspm": "^0.14.0"
   }
 }

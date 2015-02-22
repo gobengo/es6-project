@@ -2,7 +2,6 @@ import debug from 'debug'
 
 let log = debug('play-jspm');
 
-log('defining jspm-play/index.js');
 log('in src/index.es6')
 
 /**
@@ -12,7 +11,7 @@ log('in src/index.es6')
  * Dependencies (injected)
  * * window {DOM.Window}
  */
-export default class index {
+export default class {
   constructor({ document }) {
     log('in jspm-play constructor', document);
   }

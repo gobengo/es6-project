@@ -8,13 +8,14 @@ THIS_DIR:=$(shell cd $(dir $(THIS_MAKEFILE_PATH));pwd)
 BIN := $(THIS_DIR)/node_modules/.bin
 SIX_TO_FIVE ?= $(NODE) $(BIN)/babel
 
-ES6_FILES := $(wildcard *.es6)
+ES6_FILES := $(wildcard src/*.es6)
 $(info $$ES6_FILES is [${ES6_FILES}])
-JS_FILES := $(wildcard *.js)
+JS_FILES := $(wildcard src/*.js)
 $(info $$JS_FILES is [${JS_FILES}])
 
 
 COMPILED_FILES := $(ES6_FILES:.es6=.js)
+$(info $$COMPILED_FILES is [${COMPILED_FILES}])
 
 build: install $(COMPILED_FILES) dist
 
@@ -30,8 +31,9 @@ node_modules:
 	npm install
 
 %.js: %.es6
-	$(SIX_TO_FIVE) -i runtime -e $< --out-file $@
+	cp $< $@
+	# $(SIX_TO_FIVE) -i runtime -e $< --out-file $@
 
-dist:
+dist: $(JS_FILES)
 	mkdir -p dist
-	jspm bundle index dist/jspm-play.js --inject
+	./node_modules/.bin/jspm bundle src/index dist/jspm-play.js --inject
