@@ -3,5 +3,3 @@
 /node_modules
 /src/*.js
 /*.js
-jspm-play.sublime-project
-jspm-play.sublime-workspace

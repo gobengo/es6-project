@@ -39,4 +39,4 @@ node_modules:
 
 dist: install $(JS_FILES)
 	mkdir -p dist
-	./node_modules/.bin/jspm bundle src/index dist/jspm-play.js --inject
+	./node_modules/.bin/jspm bundle src/index dist/es6-project.js --inject
