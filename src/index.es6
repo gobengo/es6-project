@@ -1,6 +1,7 @@
+import AppElement from '~/app-element';
 import debug from 'debug'
 
-let log = debug('play-jspm');
+let log = debug('play-jspm')
 
 log('in src/index.es6')
 
@@ -11,8 +12,9 @@ log('in src/index.es6')
  * Dependencies (injected)
  * * window {DOM.Window}
  */
-export default class {
-  constructor({ document }) {
-    log('in jspm-play constructor', document);
-  }
+export default function ({ document }) {
+  log('in jspm-play constructor', document)
+  let el = AppElement(document.createElement('div'));
+  document.body.appendChild(el);
 }
+
